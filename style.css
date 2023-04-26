@@ -306,7 +306,7 @@ body{
 
 /* RESPONSIVE DESIGN */
 @media(max-width: 992px){
-    .body{
+    body{
         overflow: hidden;
     }
 
