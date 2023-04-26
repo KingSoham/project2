@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+body{
+    overflow: hidden;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 99;
+}
+.logo {
+    font-size: 33px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 20px;
+    color: antiquewhite;
+    text-decoration: none;
+    margin-right: 38px;
+}
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    opacity: .85;
+    transition:  0.3s;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+}
+
+.navbar a:hover::after {
+    transform: scale(0, 1);
+    transform: scaleX(1);
+}
+
+.navbar .Loginpopup {
+    position: relative;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.navbar .Loginpopup::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    opacity: .85;
+    transition:  0.3s;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+}
+
+.navbar .Loginpopup:hover::after {
+    transform: scale(0, 1);
+    transform: scaleX(1);
+}
+
+
+
+.section {
+    min-height: 100vh;
+    background: url('1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    box-shadow: -1px 0 10px rgba(0, 0, 0, .2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(100%);
+    
+}
+
+@keyframes slide-in {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes slide-out {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+.wrapper.active-popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 12px;
+}
+
+.icon-close i {
+    font-size: 30px;
+    color: #222;
+   
+    
+}
+
+/* Login design */
+.wrapper .logreg-box {
+    width: 100%;
+    
+}
+
+.wrapper .form-box.login {
+    display:  block;
+}
+
+.wrapper.active .form-box.login {
+    display:  none;
+}
+
+.wrapper .form-box.register {
+    display:  none;
+}
+
+.wrapper.active .form-box.register {
+    display:  block;
+}
+
+.logreg-box .logreg-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.logreg-title h2 {
+    font-size: 33px;
+}
+
+.logreg-title p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.logreg-box .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    padding-right: 35px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    font: 500;
+    transition:  .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 19px;
+    color: #fff;
+}
+
+.logreg-box .remember-forgot {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.logreg-box .btn {
+    width: 100%;
+    height: 46px;
+    border-radius: 40px;
+    background: crimson;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    outline: none;
+    font-size: 16px;
+    color: #222;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.logreg-box .logreg-link {
+    font-size: 14.5px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 25px;
+
+}
+
+.logreg-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    
+}
+
+.logreg-link p a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 992px){
+    .body{
+        overflow: hidden;
+    }
+
+    .header{
+     position: absolute;
+     flex-direction: row;
+     width: 50%;
+     font-size: 30px;
+     top:50px;
+     left:50px;
+     
+    }
+
+    .navbar{
+        margin-top: 20px;
+    }
+
+    .wrapper{
+        width: 100%;
+    }
+
+    .icon-close{
+        top:0;
+        left:0;
+        border-bottom-right-radius: 10px;
+        
+    }
+}
